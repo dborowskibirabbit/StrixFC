@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria | STRIX Fight Club</title>
+  <meta name="description" content="Galeria STRIX Fight Club: treningi, walki, sukcesy i materialy wideo." />
+
+  <link rel="icon" type="image/png" href="assets/images/strixnb.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { display: ["Bebas Neue", "Impact", "sans-serif"], body: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"] } } } };
+  </script>
+  <style>
+    .gallery-slider {
+      position: relative;
+      margin-top: 1.25rem;
+    }
+
+    .gallery-viewport {
+      overflow: hidden;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 1rem;
+      transition: margin-left 0.3s ease;
+      will-change: margin-left;
+      padding-bottom: 0.25rem;
+    }
+
+    .gallery-page {
+      flex: 0 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      min-height: 11rem;
+    }
+
+    .gallery-empty {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.25rem;
+      width: 2.25rem;
+      border-radius: 9999px;
+      border: 1px solid rgb(63 63 70);
+      background: rgb(9 9 11 / 0.85);
+      font-size: 1.125rem;
+      line-height: 1;
+      color: white;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .gallery-arrow:hover {
+      background: rgb(24 24 27);
+      border-color: rgb(113 113 122);
+    }
+
+    .gallery-arrow:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 1279px) {
+      .gallery-item { min-height: 10rem; }
+    }
+
+    @media (max-width: 767px) {
+      .gallery-page {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-item { min-height: 9rem; }
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-white font-body antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/70 bg-black/85 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:relative md:px-6" aria-label="Glowna nawigacja">
+      <a href="index.html" class="flex shrink-0 items-center gap-2 text-3xl tracking-wide font-display text-white"><img src="assets/images/strixnb.png" alt="Logo STRIX Fight Club" class="h-11 w-11 object-contain" /><span class="whitespace-nowrap">STRIX <span class="text-[#be8663]">Fight Club</span></span></a>
+      <button id="menu-toggle" class="inline-flex items-center justify-center rounded-md border border-zinc-700 p-2 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otworz menu"><span class="h-0.5 w-5 bg-white block"></span></button>
+      <ul class="hidden items-center gap-4 text-[11px] font-bold uppercase tracking-[0.18em] lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 lg:flex-nowrap lg:whitespace-nowrap lg:gap-5">
+        <li><a href="co-trenujemy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Co trenujemy</a></li>
+        <li><a href="trenerzy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Trenerzy</a></li>
+        <li><a href="grafik-i-cennik.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Grafik i cennik</a></li>
+        <li><a href="galeria.html" class="whitespace-nowrap text-white">Galeria</a></li>
+        <li><a href="partnerzy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Partnerzy</a></li>
+        <li><a href="kontakt.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Kontakt</a></li>
+      </ul>
+      <a href="grafik-i-cennik.html" class="hidden shrink-0 whitespace-nowrap rounded-md bg-[#be8663] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white transition hover:bg-[#a87457] lg:inline-flex">Zapisz sie</a>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-zinc-800 bg-black lg:hidden">
+      <ul class="space-y-1 px-4 py-3 text-xs font-bold uppercase tracking-widest">
+        <li><a href="co-trenujemy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Co trenujemy</a></li>
+        <li><a href="trenerzy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Trenerzy</a></li>
+        <li><a href="grafik-i-cennik.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Grafik i cennik</a></li>
+        <li><a href="galeria.html" class="block rounded px-2 py-2 text-white">Galeria</a></li>
+        <li><a href="partnerzy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Partnerzy</a></li>
+        <li><a href="kontakt.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Kontakt</a></li>
+      </ul>
+      <div class="border-t border-zinc-800 px-4 py-4">
+        <a href="grafik-i-cennik.html" class="flex w-full items-center justify-center rounded-md bg-[#be8663] px-5 py-3 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-[#a87457]">Zapisz sie</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <section class="border-b border-zinc-800 bg-black py-16">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <h1 class="font-display text-6xl">Galeria</h1>
+        <p class="mt-3 max-w-3xl text-zinc-400">Treningi, walki i sukcesy naszego klubu.</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 py-12 md:px-6">
+      <h2 class="font-display text-5xl">Treningi</h2>
+      <div class="gallery-slider">
+        <div class="mb-3 flex justify-end gap-2">
+          <button id="gallery-treningi-prev" type="button" class="gallery-arrow" aria-label="Poprzednie zdjecia treningow">&#8249;</button>
+          <button id="gallery-treningi-next" type="button" class="gallery-arrow" aria-label="Nastepne zdjecia treningow">&#8250;</button>
+        </div>
+        <div class="gallery-viewport">
+          <div id="gallery-treningi-track" class="gallery-track"></div>
+        </div>
+      </div>
+
+      <h2 class="mt-10 font-display text-5xl">Walki i sukcesy</h2>
+      <div class="gallery-slider">
+        <div class="mb-3 flex justify-end gap-2">
+          <button id="gallery-walki-prev" type="button" class="gallery-arrow" aria-label="Poprzednie zdjecia walk">&#8249;</button>
+          <button id="gallery-walki-next" type="button" class="gallery-arrow" aria-label="Nastepne zdjecia walk">&#8250;</button>
+        </div>
+        <div class="gallery-viewport">
+          <div id="gallery-walki-track" class="gallery-track"></div>
+        </div>
+      </div>
+
+      <h2 class="mt-10 font-display text-5xl">Wideo</h2>
+      <p class="mt-3 text-sm text-zinc-400">Dodawaj pliki wideo do folderu assets/videos, a pojawia sie tutaj automatycznie.</p>
+      <div class="gallery-slider">
+        <div class="mb-3 flex justify-end gap-2">
+          <button id="gallery-video-prev" type="button" class="gallery-arrow" aria-label="Poprzednie wideo">&#8249;</button>
+          <button id="gallery-video-next" type="button" class="gallery-arrow" aria-label="Nastepne wideo">&#8250;</button>
+        </div>
+        <div class="gallery-viewport">
+          <div id="gallery-video-track" class="gallery-track"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

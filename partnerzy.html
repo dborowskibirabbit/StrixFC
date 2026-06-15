@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partnerzy | STRIX Fight Club</title>
+  <meta name="description" content="Partnerzy STRIX Fight Club: sponsorzy, federacje oraz partnerzy sportowi." />
+
+  <link rel="icon" type="image/png" href="assets/images/strixnb.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { display: ["Bebas Neue", "Impact", "sans-serif"], body: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"] } } } };
+  </script>
+</head>
+<body class="bg-zinc-950 text-white font-body antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/70 bg-black/85 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:relative md:px-6" aria-label="Glowna nawigacja">
+      <a href="index.html" class="flex shrink-0 items-center gap-2 text-3xl tracking-wide font-display text-white"><img src="assets/images/strixnb.png" alt="Logo STRIX Fight Club" class="h-11 w-11 object-contain" /><span class="whitespace-nowrap">STRIX <span class="text-[#be8663]">Fight Club</span></span></a>
+      <button id="menu-toggle" class="inline-flex items-center justify-center rounded-md border border-zinc-700 p-2 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otworz menu"><span class="h-0.5 w-5 bg-white block"></span></button>
+      <ul class="hidden items-center gap-4 text-[11px] font-bold uppercase tracking-[0.18em] lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 lg:flex-nowrap lg:whitespace-nowrap lg:gap-5">
+        <li><a href="co-trenujemy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Co trenujemy</a></li>
+        <li><a href="trenerzy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Trenerzy</a></li>
+        <li><a href="grafik-i-cennik.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Grafik i cennik</a></li>
+        <li><a href="galeria.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Galeria</a></li>
+        <li><a href="partnerzy.html" class="whitespace-nowrap text-white">Partnerzy</a></li>
+        <li><a href="kontakt.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Kontakt</a></li>
+      </ul>
+      <a href="grafik-i-cennik.html" class="hidden shrink-0 whitespace-nowrap rounded-md bg-[#be8663] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white transition hover:bg-[#a87457] lg:inline-flex">Zapisz sie</a>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-zinc-800 bg-black lg:hidden">
+      <ul class="space-y-1 px-4 py-3 text-xs font-bold uppercase tracking-widest">
+        <li><a href="co-trenujemy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Co trenujemy</a></li>
+        <li><a href="trenerzy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Trenerzy</a></li>
+        <li><a href="grafik-i-cennik.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Grafik i cennik</a></li>
+        <li><a href="galeria.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Galeria</a></li>
+        <li><a href="partnerzy.html" class="block rounded px-2 py-2 text-white">Partnerzy</a></li>
+        <li><a href="kontakt.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Kontakt</a></li>
+      </ul>
+      <div class="border-t border-zinc-800 px-4 py-4">
+        <a href="grafik-i-cennik.html" class="flex w-full items-center justify-center rounded-md bg-[#be8663] px-5 py-3 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-[#a87457]">Zapisz sie</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <section class="border-b border-zinc-800 bg-black py-16">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <h1 class="font-display text-6xl">Partnerzy</h1>
+        <p class="mt-3 max-w-3xl text-zinc-400">Sponsorzy, federacje i marki, ktore wspieraja STRIX Fight Club.</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 py-12 md:px-6">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex h-28 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/40 text-zinc-500">Logo partnera</div>
+        <div class="flex h-28 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/40 text-zinc-500">Logo partnera</div>
+        <div class="flex h-28 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/40 text-zinc-500">Logo partnera</div>
+        <div class="flex h-28 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/40 text-zinc-500">Logo partnera</div>
+        <div class="flex h-28 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/40 text-zinc-500">Logo federacji</div>
+        <div class="flex h-28 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/40 text-zinc-500">Logo federacji</div>
+        <div class="flex h-28 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/40 text-zinc-500">Logo karty sportowej</div>
+        <div class="flex h-28 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/40 text-zinc-500">Logo karty sportowej</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

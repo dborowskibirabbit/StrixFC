@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Co trenujemy | STRIX Fight Club</title>
+  <meta name="description" content="Poznaj dyscypliny STRIX Fight Club: Boks, Muay Thai, Krav Maga i STRIX Kids. Sprawdz co zabrac na pierwszy trening." />
+
+  <link rel="icon" type="image/png" href="assets/images/strixnb.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Bebas Neue", "Impact", "sans-serif"],
+            body: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-zinc-950 text-white font-body antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/70 bg-black/85 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:relative md:px-6" aria-label="Glowna nawigacja">
+      <a href="index.html" class="flex shrink-0 items-center gap-2 text-3xl tracking-wide font-display text-white"><img src="assets/images/strixnb.png" alt="Logo STRIX Fight Club" class="h-11 w-11 object-contain" /><span class="whitespace-nowrap">STRIX <span class="text-[#be8663]">Fight Club</span></span></a>
+      <button id="menu-toggle" class="inline-flex items-center justify-center rounded-md border border-zinc-700 p-2 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otworz menu">
+        <span class="h-0.5 w-5 bg-white block"></span>
+      </button>
+      <ul class="hidden items-center gap-4 text-[11px] font-bold uppercase tracking-[0.18em] lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 lg:flex-nowrap lg:whitespace-nowrap lg:gap-5">
+        <li><a href="co-trenujemy.html" class="whitespace-nowrap text-white">Co trenujemy</a></li>
+        <li><a href="trenerzy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Trenerzy</a></li>
+        <li><a href="grafik-i-cennik.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Grafik i cennik</a></li>
+        <li><a href="galeria.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Galeria</a></li>
+        <li><a href="partnerzy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Partnerzy</a></li>
+        <li><a href="kontakt.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Kontakt</a></li>
+      </ul>
+      <a href="grafik-i-cennik.html" class="hidden shrink-0 whitespace-nowrap rounded-md bg-[#be8663] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white transition hover:bg-[#a87457] lg:inline-flex">Zapisz sie</a>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-zinc-800 bg-black lg:hidden">
+      <ul class="space-y-1 px-4 py-3 text-xs font-bold uppercase tracking-widest">
+        <li><a href="co-trenujemy.html" class="block rounded px-2 py-2 text-white">Co trenujemy</a></li>
+        <li><a href="trenerzy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Trenerzy</a></li>
+        <li><a href="grafik-i-cennik.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Grafik i cennik</a></li>
+        <li><a href="galeria.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Galeria</a></li>
+        <li><a href="partnerzy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Partnerzy</a></li>
+        <li><a href="kontakt.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Kontakt</a></li>
+      </ul>
+      <div class="border-t border-zinc-800 px-4 py-4">
+        <a href="grafik-i-cennik.html" class="flex w-full items-center justify-center rounded-md bg-[#be8663] px-5 py-3 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-[#a87457]">Zapisz sie</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <section class="border-b border-zinc-800 bg-black py-16">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <h1 class="font-display text-6xl">Co trenujemy</h1>
+        <p class="mt-3 max-w-3xl text-zinc-400">Kazda sekcja ma jasny progres treningowy i mozliwosc dopasowania poziomu do Twoich celow.</p>
+      </div>
+    </section>
+
+    <section class="mx-auto grid max-w-7xl gap-6 px-4 py-12 md:px-6 md:grid-cols-2">
+      <article id="boks" class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
+        <h2 class="font-display text-5xl">Boks</h2>
+        <p class="mt-3 text-zinc-300">Fundament, Siła i Charakter. Naucz się rzemiosła walki od podstaw. Zbuduj żelazną kondycję, popraw koordynację i wyładuj stres po ciężkim dniu.</p>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-300">
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]"></span>Boks w STRIX Fight Club to nie tylko nauka ciosów – to kompletny trening ogólnorozwojowy. 
+              Skupiamy się na poprawnej technice, pracy nóg, dynamice oraz strategicznym myśleniu na ringu. 
+              Nasze zajęcia łączą intensywne kardio z nauką realnych umiejętności walki. 
+              Dbamy o to, aby każdy – niezależnie od poziomu zaawansowania – czuł się na sali bezpiecznie i komfortowo.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Dla kogo: dla kobiet i mężczyzn w każdym wieku. 
+              Dla tych, którzy chcą spalić setki kalorii, jak i dla osób marzących o spróbowaniu swoich sił w kontrolowanym sparingu.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Co zyskasz: piekielną kondycję, wyrzeźbioną sylwetkę, pewność siebie i idealny refleks.</li>
+      </article>
+      <article id="boks" class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
+        <h2 class="font-display text-5xl">Muay Thai</h2>
+        <p class="mt-3 text-zinc-300">Najpotężniejsza Stójka Świata. Wykorzystaj siłę pięści, łokci, kolan oraz nóg. Poczyń postępy, o jakich Ci się nie śniło.</p>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-300">
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]"></span>Muay Thai to narodowy sport Tajlandii, uznawany za jeden z 
+              najskuteczniejszych systemów walki w stójce. W STRIX uczymy pełnego spektrum tej sztuki: od widowiskowych i silnych kopnięć okrężnych, 
+              przez potężne uderzenia kolanami, aż po walkę w klinczu. Treningi są niezwykle dynamiczne i angażują dosłownie każdy mięsień Twojego ciała.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Dla kogo: dla osób szukających twardego, wszechstronnego treningu i chcących przełamać swoje dotychczasowe bariery fizyczne.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Co zyskasz: niewiarygodną wytrzymałość, elastyczność ciała, potężną siłę nóg oraz umiejętność walki w pełnym dystansie.</li>
+      </article>
+      <article id="boks" class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
+        <h2 class="font-display text-5xl">Krav Maga</h2>
+        <p class="mt-3 text-zinc-300">Nowoczesna Samoobrona i Taktyka.Skuteczny system samoobrony oparty na naturalnych odruchach. Bez zbędnej filozofii – czysta praktyka.</p>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-300">
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]"></span>Krav Maga nie jest sportem zawodowym – to izraelski system stworzony po to, aby przetrwać w sytuacji realnego zagrożenia na ulicy. W STRIX nie uczymy Cię "ładnych" układów. Uczymy Cię, jak szybko i skutecznie zneutralizować agresora, jak unikać konfliktów oraz jak działać pod wpływem ogromnego stresu. Ćwiczymy scenariusze obrony przed uderzeniami, chwytami, a także obronę w miejscach o ograniczonej przestrzeni.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Dla kogo: absolutnie dla każdego. Szczególnie polecane kobietom, osobom starszym oraz wszystkim, którzy chcą czuć się bezpiecznie niezależnie od pory dnia i miejsca.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Co zyskasz: umiejętność realnej oceny zagrożeń, opanowanie w sytuacjach kryzysowych, przełamanie strachu oraz poprawę sprawności fizycznej.</li>
+      </article>
+      <article id="strix-kids" class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6">
+        <h2 class="font-display text-5xl">STRIX Kids</h2>
+        <p class="mt-3 text-zinc-300">Trening, ktory buduje nie tylko sprawnosc, ale tez charakter na cale zycie.</p>
+        <ul class="mt-5 space-y-2 text-sm text-zinc-300">
+          <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Dyscyplina i regularnosc - wstawanie, przychodzenie, robienie swojego nawet gdy nie chce się chcieć</li>
+          <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Pewnosc siebie - „Ja to potrafię" to zdanie, które rodzi się na sali treningowej</li>
+          <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Szacunek - do trenera, do partnera, do przeciwnika, do siebie</li>
+          <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Wspolpraca i komunikacja - nauka pracy w grupie i wspierania innych</li>
+          <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Koncentracja i odpornosc psychiczna - „Jest ciężko, ale dam radę" – to mindset na całe życie</li>
+          <li class="flex items-start gap-2"><span class="mt-1 text-[#c89472]">•</span>Umiejetnosc radzenia sobie z porazka - bo tu się przegrywa rundę i wstaje do następnej</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="border-t border-zinc-800 bg-black py-12">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <h2 class="font-display text-5xl">Co zabrac na pierwszy trening</h2>
+        <ul class="mt-5 grid gap-3 text-zinc-300 md:grid-cols-2">
+          <li class="rounded border border-zinc-800 bg-zinc-900/40 p-4">Koszulka sportowa i spodenki</li>
+          <li class="rounded border border-zinc-800 bg-zinc-900/40 p-4">Woda i recznik</li>
+          <li class="rounded border border-zinc-800 bg-zinc-900/40 p-4">Obuwie sportowe na płaskiej podeszwie</li>
+          <li class="rounded border border-zinc-800 bg-zinc-900/40 p-4">Pozytywne nastawienie i gotowosc do pracy</li>
+        </ul>
+        <a href="grafik-i-cennik.html" class="mt-8 inline-flex rounded-md bg-[#be8663] px-6 py-3 text-sm font-extrabold uppercase tracking-wider text-white transition hover:bg-[#a87457]">Sprawdz grafik i zapisz sie</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STRIX Fight Club | Boks, Muay Thai, Krav Maga, STRIX Kids</title>
+  <meta name="description" content="STRIX Fight Club - premium klub sportow walki. Boks, Muay Thai, Krav Maga i STRIX Kids. Dolacz do pierwszego treningu." />
+
+  <link rel="icon" type="image/png" href="assets/images/strixnb.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            strix: {
+              accent: "#be8663",
+              dark: "#09090b",
+              panel: "#18181b"
+            }
+          },
+          fontFamily: {
+            display: ["Bebas Neue", "Impact", "sans-serif"],
+            body: ["Montserrat", "ui-sans-serif", "system-ui", "sans-serif"]
+          },
+          boxShadow: {
+            amberglow: "0 0 0 1px rgba(190, 134, 99, 0.45), 0 0 28px rgba(190, 134, 99, 0.22)"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-zinc-950 text-white font-body antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/70 bg-black/85 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:relative md:px-6" aria-label="Glowna nawigacja">
+      <a href="index.html" class="flex shrink-0 items-center gap-2 text-3xl tracking-wide font-display text-white">
+        <img src="assets/images/strixnb.png" alt="Logo STRIX Fight Club" class="h-11 w-13 object-contain" />
+        <span class="whitespace-nowrap">STRIX <span class="text-[#be8663]">Fight Club</span></span>
+      </a>
+
+      <button id="menu-toggle" class="inline-flex items-center justify-center rounded-md border border-zinc-700 p-2 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otworz menu">
+        <span class="h-0.5 w-5 bg-white block"></span>
+      </button>
+
+      <ul class="hidden items-center gap-4 text-[11px] font-bold uppercase tracking-[0.18em] lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 lg:flex-nowrap lg:whitespace-nowrap lg:gap-5">
+        <li><a href="co-trenujemy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Co trenujemy</a></li>
+        <li><a href="trenerzy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Trenerzy</a></li>
+        <li><a href="grafik-i-cennik.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Grafik i cennik</a></li>
+        <li><a href="galeria.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Galeria</a></li>
+        <li><a href="partnerzy.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Partnerzy</a></li>
+        <li><a href="kontakt.html" class="whitespace-nowrap text-zinc-200 hover:text-white">Kontakt</a></li>
+      </ul>
+
+      <a href="grafik-i-cennik.html" class="hidden shrink-0 whitespace-nowrap rounded-md bg-[#be8663] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white transition hover:bg-[#a87457] lg:inline-flex">
+        Zapisz sie
+      </a>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-zinc-800 bg-black lg:hidden">
+      <ul class="space-y-1 px-4 py-3 text-xs font-bold uppercase tracking-widest">
+        <li><a href="co-trenujemy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Co trenujemy</a></li>
+        <li><a href="trenerzy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Trenerzy</a></li>
+        <li><a href="grafik-i-cennik.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Grafik i cennik</a></li>
+        <li><a href="galeria.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Galeria</a></li>
+        <li><a href="partnerzy.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Partnerzy</a></li>
+        <li><a href="kontakt.html" class="block rounded px-2 py-2 text-zinc-200 hover:bg-zinc-900 hover:text-white">Kontakt</a></li>
+      </ul>
+      <div class="border-t border-zinc-800 px-4 py-4">
+        <a href="grafik-i-cennik.html" class="flex w-full items-center justify-center rounded-md bg-[#be8663] px-5 py-3 text-xs font-extrabold uppercase tracking-widest text-white transition hover:bg-[#a87457]">Zapisz sie</a>
+      </div>
+    </div>
+
+    <div class="border-t border-zinc-800 bg-zinc-900/80">
+      <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2 text-[11px] font-bold uppercase tracking-wider text-zinc-200 md:flex-row md:items-center md:justify-between md:px-6">
+        <p>Od 1 lipca: zapisy, rezerwacje i platnosci w aplikacji eFitness.</p>
+        <a href="#efitness" class="text-[#c89472] hover:text-[#d7ab8f]">Zobacz kroki przejscia</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative min-h-[68vh] overflow-hidden pt-24" id="hero">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(190,134,99,0.34),rgba(0,0,0,0.95)_52%),linear-gradient(to_bottom,rgba(0,0,0,0.42),rgba(0,0,0,0.95))]"></div>
+      <div class="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:48px_48px]"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_30%,rgba(255,255,255,0.16),rgba(0,0,0,0)_42%)]"></div>
+
+      <div class="relative mx-auto grid min-h-[calc(68vh-5rem)] max-w-7xl items-start gap-8 px-4 py-10 pb-6 md:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] md:px-6 md:pb-10 lg:gap-12">
+        <div class="flex justify-center pt-2 md:justify-center md:pt-6">
+          <img src="assets/images/strixlogo-nb.png" alt="Logo STRIX Fight Club" class="h-[18rem] w-[18rem] object-contain drop-shadow-[0_0_46px_rgba(190,134,99,0.3)] md:h-[26rem] md:w-[26rem] lg:h-[32rem] lg:w-[100rem]" />
+        </div>
+
+        <div class="flex justify-end pt-2 md:pt-10">
+          <div class="w-full max-w-xl rounded-2xl border border-zinc-700/80 bg-black/62 p-4 backdrop-blur-sm md:p-5 md:pr-6 lg:p-6">
+            <p class="mb-4 text-sm font-bold uppercase tracking-[0.32em] text-[#c89472] md:text-base">Boks | Muay Thai | Krav Maga</p>
+            <p class="mt-2 max-w-xl text-base text-zinc-300 md:text-lg">
+              Miejsce, gdzie codzienna dyscyplina spotyka sie z energia druzyny. Treningi dla poczatkujacych i zaawansowanych.
+            </p>
+            <div class="mt-6">
+              <a href="#zapisy" class="inline-flex rounded-md bg-[#be8663] px-8 py-4 text-sm font-extrabold uppercase tracking-wider text-white shadow-amberglow transition hover:bg-[#a87457]">
+                Zapisz sie na pierwszy trening
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="co-trenujemy" class="border-t border-zinc-800 bg-zinc-950 py-20">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <h2 class="font-display text-5xl text-white md:text-6xl">Co trenujemy</h2>
+        <p class="mt-3 max-w-3xl text-zinc-400">Wybierz styl dopasowany do Twojego celu. Kazda sekcja zawiera trening techniczny, motoryczny i elementy walki zadaniowej.</p>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <a href="co-trenujemy.html#boks" class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:-translate-y-1 hover:border-[#be8663]/60 hover:bg-zinc-900">
+            <h3 class="font-display text-4xl text-white">Boks</h3>
+            <p class="mt-3 text-sm text-zinc-400">Fundamenty, kombinacje i praca na nogach.</p>
+          </a>
+          <a href="co-trenujemy.html#muay-thai" class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:-translate-y-1 hover:border-[#be8663]/60 hover:bg-zinc-900">
+            <h3 class="font-display text-4xl text-white">Muay Thai</h3>
+            <p class="mt-3 text-sm text-zinc-400">Uderzenia, klincz i pelna dynamika walki.</p>
+          </a>
+          <a href="co-trenujemy.html#krav-maga" class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:-translate-y-1 hover:border-[#be8663]/60 hover:bg-zinc-900">
+            <h3 class="font-display text-4xl text-white">Krav Maga</h3>
+            <p class="mt-3 text-sm text-zinc-400">Realna samoobrona i scenariusze stresowe.</p>
+          </a>
+          <a href="co-trenujemy.html#strix-kids" class="group rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 transition hover:-translate-y-1 hover:border-[#be8663]/60 hover:bg-zinc-900">
+            <h3 class="font-display text-4xl text-white">STRIX Kids</h3>
+            <p class="mt-3 text-sm text-zinc-400">Pewnosc siebie, koordynacja i charakter.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="opinie" class="border-t border-zinc-800 bg-black py-20">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <h2 class="font-display text-5xl text-white md:text-6xl">Opinie</h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+            <p class="text-[#c89472]">★★★★★</p>
+            <p class="mt-3 text-zinc-200">Najlepsza atmosfera i konkretne podejscie trenerskie. Po miesiacu treningow czuje ogromny progres.</p>
+            <p class="mt-4 text-sm uppercase tracking-wider text-zinc-500">- Kamil, Boks</p>
+          </article>
+          <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+            <p class="text-[#c89472]">★★★★★</p>
+            <p class="mt-3 text-zinc-200">Wysoki poziom, zero przypadku. Treningi sa wymagajace, ale motywuja i daja efekty.</p>
+            <p class="mt-4 text-sm uppercase tracking-wider text-zinc-500">- Marta, Muay Thai</p>
+          </article>
+          <article class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+            <p class="text-[#c89472]">★★★★★</p>
+            <p class="mt-3 text-zinc-200">Sekcja kids to strzal w dziesiatke. Syn uwielbia treningi i nabral ogromnej pewnosci siebie.</p>
+            <p class="mt-4 text-sm uppercase tracking-wider text-zinc-500">- Anna, STRIX Kids</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trenerzy-teaser" class="border-t border-zinc-800 bg-zinc-950 py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-2 md:px-6">
+        <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-8">
+          <p class="text-sm uppercase tracking-[0.2em] text-[#c89472]">Glowny trener</p>
+          <h2 class="mt-3 font-display text-5xl">Trener STRIX</h2>
+          <p class="mt-4 text-zinc-300">Wieloletnie doswiadczenie ringowe i instruktorskie. Treningi prowadzone z naciskiem na technike, taktyke i mental.</p>
+          <a href="trenerzy.html" class="mt-6 inline-flex rounded-md border border-[#be8663] px-6 py-3 text-sm font-bold uppercase tracking-wider text-white transition hover:bg-[#be8663]">Poznaj caly zespol</a>
+        </div>
+        <div class="rounded-xl border border-zinc-800 bg-[linear-gradient(130deg,#18181b_10%,#27272a_60%,#3f3f46_100%)] p-3">
+          <img
+            src="assets/images/main-coach.jpg"
+            alt="Glowny trener STRIX Fight Club"
+            class="h-72 w-full rounded-lg object-cover object-[50%_18%]"
+            loading="lazy"
+            onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"
+          />
+          <div class="hidden h-72 rounded-lg border border-dashed border-zinc-700 p-4 text-zinc-400">
+            Dodaj zdjecie: assets/images/main-coach.jpg
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rozwoj-klubu" class="border-t border-zinc-800 bg-black py-20">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-2 md:px-6">
+        <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-8">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#c89472]">Juz wkrotce</p>
+          <h2 class="mt-3 font-display text-6xl leading-none md:text-7xl">Nowy poczatek.</h2>
+          <ul class="mt-6 space-y-3 text-2xl font-semibold text-zinc-100 md:text-3xl">
+            <li class="flex items-center gap-3"><span class="text-[#c89472]">•</span>Nowa sala</li>
+            <li class="flex items-center gap-3"><span class="text-[#c89472]">•</span>Strefa silowa</li>
+            <li class="flex items-center gap-3"><span class="text-[#c89472]">•</span>Cardio</li>
+            <li class="flex items-center gap-3"><span class="text-[#c89472]">•</span>Nowy sprzet</li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl border border-zinc-800 bg-[linear-gradient(160deg,#111113_10%,#191919_55%,#212121_100%)] p-8">
+          <h3 class="font-display text-4xl">Aktualnosci z klubu</h3>
+          <p class="mt-3 text-zinc-300">Czerwiec to miesiac przejscia. Pomagamy kazdemu czlonkowi spokojnie przeniesc karnet do eFitness.</p>
+          <ul class="mt-5 space-y-3 text-sm text-zinc-300">
+            <li class="rounded border border-zinc-800 bg-black/30 p-3">1. Pobierz aplikacje eFitness.</li>
+            <li class="rounded border border-zinc-800 bg-black/30 p-3">2. Znajdz klub STRIX Fight Club i zaloz konto.</li>
+            <li class="rounded border border-zinc-800 bg-black/30 p-3">3. Wybierz karnet i oplac kartą lub BLIK-iem.</li>
+            <li class="rounded border border-zinc-800 bg-black/30 p-3">4. Skanuj kod QR u trenera przed wejsciem.</li>
+          </ul>
+          <a href="https://www.facebook.com/strixfightclub" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex rounded-md border border-[#be8663] px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-[#be8663]">Obserwuj aktualnosci na Facebooku</a>
+          <p class="mt-3 text-xs text-zinc-500">STRIX Fight Club · 2.6K followers</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="live-z-klubu" class="border-t border-zinc-800 bg-zinc-950 py-20">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h2 class="font-display text-5xl text-white md:text-6xl">Live z klubu</h2>
+            <p class="mt-3 text-zinc-400">Ręczny feed z najnowszymi aktualnosciami. Przesuwaj w lewo i prawo.</p>
+          </div>
+          <div class="hidden items-center gap-2 md:flex">
+            <button id="feed-prev" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-zinc-700 text-zinc-200 transition hover:border-[#be8663] hover:text-white" aria-label="Poprzednie posty">&#8592;</button>
+            <button id="feed-next" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-zinc-700 text-zinc-200 transition hover:border-[#be8663] hover:text-white" aria-label="Nastepne posty">&#8594;</button>
+          </div>
+        </div>
+
+        <div id="fb-feed" class="mt-8 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 md:p-6">
+          <div id="manual-feed-track" class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2">
+            <article class="min-w-[86%] snap-start rounded-lg border border-zinc-800 bg-black/35 p-5 md:min-w-[48%] lg:min-w-[31%]">
+              <p class="text-xs uppercase tracking-[0.2em] text-[#c89472]">1 lipca 2026</p>
+              <h3 class="mt-3 text-lg font-bold text-white">Od 1 lipca wszystko w eFitness</h3>
+              <p class="mt-3 text-sm text-zinc-300">Karnet, grafik, rezerwacje i platnosc w jednej aplikacji. Czerwiec to miesiac przejscia dla klubowiczow.</p>
+              <a href="https://www.facebook.com/photo?fbid=1513878250531509&set=pcb.1513879287198072" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex text-xs font-bold uppercase tracking-wider text-[#c89472] hover:text-[#be8663]">Zobacz post na Facebooku</a>
+            </article>
+
+            <article class="min-w-[86%] snap-start rounded-lg border border-zinc-800 bg-black/35 p-5 md:min-w-[48%] lg:min-w-[31%]">
+              <p class="text-xs uppercase tracking-[0.2em] text-[#c89472]">Juz wkrotce</p>
+              <h3 class="mt-3 text-lg font-bold text-white">To dopiero poczatek zmian</h3>
+              <p class="mt-3 text-sm text-zinc-300">Nowa sala po modernizacji, strefa silowa, cardio i nowy sprzet. STRIX podnosi poziom klubu.</p>
+              <a href="https://www.facebook.com/photo?fbid=1513878250531509&set=pcb.1513879287198072" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex text-xs font-bold uppercase tracking-wider text-[#c89472] hover:text-[#be8663]">Zobacz post na Facebooku</a>
+            </article>
+
+            <article class="min-w-[86%] snap-start rounded-lg border border-zinc-800 bg-black/35 p-5 md:min-w-[48%] lg:min-w-[31%]">
+              <p class="text-xs uppercase tracking-[0.2em] text-[#c89472]">Sekcja dzieci</p>
+              <h3 class="mt-3 text-lg font-bold text-white">Charakter buduje sie na macie</h3>
+              <p class="mt-3 text-sm text-zinc-300">Może myślisz, że Twoje dziecko „tylko" chodziło na treningi. Kopało, wykonywało ciosy, robiło pompki…</p>
+              <a href="https://www.facebook.com/photo?fbid=1503144334938234&set=a.559870609265616" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex text-xs font-bold uppercase tracking-wider text-[#c89472] hover:text-[#be8663]">Zobacz post na Facebooku</a>
+            </article>
+
+            <article class="min-w-[86%] snap-start rounded-lg border border-zinc-800 bg-black/35 p-5 md:min-w-[48%] lg:min-w-[31%]">
+              <p class="text-xs uppercase tracking-[0.2em] text-[#c89472]">Kondycja</p>
+              <h3 class="mt-3 text-lg font-bold text-white">Mocne treningi, realne efekty</h3>
+              <p class="mt-3 text-sm text-zinc-300">„Miałem zacząć w styczniu…" „Od marca miało być regularnie…" „No dobra, od maja na pewno…" Brzmi znajomo? </p>
+              <a href="https://www.facebook.com/photo?fbid=1503144311604903&set=a.559870609265616" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex text-xs font-bold uppercase tracking-wider text-[#c89472] hover:text-[#be8663]">Zobacz post na Facebooku</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="zapisy" class="border-t border-zinc-800 bg-zinc-950 py-20">
+      <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-8">
+            <h2 class="font-display text-5xl">Kontakt i zapisy</h2>
+            <ul class="mt-6 space-y-3 text-zinc-300">
+              <li><strong class="text-white">Telefon:</strong> +48 884 304 054</li>
+              <li><strong class="text-white">Email:</strong> klub@strixfightclub.pl</li>
+              <li><strong class="text-white">Adres:</strong> Komorowska 28, 05-800 Pruszkow, Poland</li>
+              <li><strong class="text-white">Godziny:</strong> pn-pt 7:00-22:00, sb 9:00-14:00</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-8" id="efitness">
+            <h3 class="font-display text-4xl">Przejscie do eFitness</h3>
+            <p class="mt-3 text-zinc-400">Od 1 lipca wszystko obsluzysz w jednej aplikacji: karnet, grafik, rezerwacje i platnosc.</p>
+            <ol class="mt-5 space-y-2 text-sm text-zinc-300">
+              <li>1. Pobierz aplikacje eFitness.</li>
+              <li>2. Wyszukaj klub STRIX Fight Club.</li>
+              <li>3. Zaloz konto i wybierz karnet.</li>
+              <li>4. Oplac karnet kartą lub BLIK-iem.</li>
+              <li>5. Przy wejsciu skanuj kod QR u trenera.</li>
+            </ol>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="https://apps.apple.com/pl/app/efitnessapp/id1054978020" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-md border border-zinc-700 px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-100 hover:border-[#be8663] hover:text-white">Pobierz na iOS</a>
+              <a href="https://play.google.com/store/apps/details?id=pl.efitness.mobile" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-md border border-zinc-700 px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-100 hover:border-[#be8663] hover:text-white">Pobierz na Android</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4">
+          <h3 class="font-display text-3xl">Mapa dojazdu</h3>
+          <div class="mt-4 overflow-hidden rounded-lg border border-zinc-800">
+            <iframe
+              title="Mapa STRIX Fight Club"
+              class="h-80 w-full"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Komorowska+28,+05-800+Pruszkow,+Poland&output=embed"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-zinc-800 bg-black py-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 text-xs uppercase tracking-wider text-zinc-500 md:flex-row md:items-center md:justify-between md:px-6">
+      <p>STRIX Fight Club</p>
+      <p>Boks | Muay Thai | Krav Maga | STRIX Kids</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

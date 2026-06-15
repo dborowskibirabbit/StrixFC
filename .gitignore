@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Local development
+.env
+.env.local
+*.log
+
+# Node/NPM (if added later)
+node_modules/
+package-lock.json
+
+# Build artifacts
+dist/
+build/
