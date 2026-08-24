@@ -2,10 +2,10 @@ name: Deploy to OVH
 
 # Wgrywa stronę na hosting OVH po każdym pushu do main.
 # Wymagane sekrety w repo (Settings → Secrets and variables → Actions):
-#   FTP_SERVER   — np. ftp.strixfc.pl albo ftp.cluster0XX.hosting.ovh.net
+#   FTP_SERVER   — np. ftp.cluster100.hosting.ovh.net
 #   FTP_USERNAME — login FTP z panelu OVH
 #   FTP_PASSWORD — hasło FTP
-#   FTP_DIR      — katalog docelowy na serwerze, np. /www/ (z ukośnikami)
+#   FTP_DIR      — katalog docelowy multisite, tu /www/strixfc/
 
 on:
   push:
@@ -23,15 +23,17 @@ jobs:
       - name: Pobierz repo
         uses: actions/checkout@v4
 
-      - name: Deploy na OVH (FTPS)
+      - name: Deploy na OVH (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
           port: 21
           server-dir: ${{ secrets.FTP_DIR }}
+          # Katalog multisite strixfc wymieniany w całości — stare podstrony znikają
+          dangerous-clean-slate: true
           # Wgrywamy tylko pliki strony — bez repo, backupu i narzędzi
           exclude: |
             .git*
