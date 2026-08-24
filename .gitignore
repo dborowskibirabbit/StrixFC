@@ -4,6 +4,11 @@ Thumbs.db
 *.swp
 *.swo
 
+# Python (local tooling, np. generator QR)
+.venv/
+venv/
+__pycache__/
+
 # IDE
 .vscode/
 .idea/

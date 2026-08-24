@@ -1,37 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STRIX Fight Club</title>
-  <meta name="description" content="STRIX Fight Club - strona tymczasowa." />
-  <link rel="icon" type="image/png" href="assets/images/strixnb.png" />
-  <style>
-    html,
-    body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #232323;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Strix Fight Club w Pruszkowie — boks, kickboxing, krav maga. Grafik treningów od września, kontakt i social media. Nowy serwis w budowie.">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Strix Fight Club — Pruszków">
+<meta property="og:description" content="Grafik treningów od września, kontakt i social media. Nowy serwis w budowie.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/og-image.jpg">
+<meta property="og:locale" content="pl_PL">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<title>Strix Fight Club — Pruszków</title>
 
-    body {
-      display: grid;
-      place-items: center;
-    }
-
-    .cover-logo {
-      width: min(92vw, 1100px);
-      height: min(82vh, 780px);
-      object-fit: contain;
-      display: block;
-      user-select: none;
-      -webkit-user-drag: none;
-    }
-  </style>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <img src="assets/images/strixlogotemp.jpg" alt="STRIX Fight Club" class="cover-logo" />
+
+
+<header class="bar">
+  <div class="wrap">
+    <img src="assets/img/logo-strix.png" alt="Strix Fight Club">
+    <span class="chip"><i class="dot"></i>Strona w budowie<span class="more"> — klub trenuje normalnie</span></span>
+  </div>
+</header>
+
+<div class="hero">
+  <img class="xmark" src="assets/img/x-mark.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <p class="lab rise">Pruszków · Komorowska 28</p>
+    <h1 class="rise">Szykujemy się<br>do nowego sezonu<em>w sieci.</em></h1>
+    <p class="lede rise"><b>Witamy w nowym STRIX Fight Club!</b> Boks, Krav Maga, Kickboxing
+      i treningi funkcjonalne dla dzieci, młodzieży i dorosłych — więcej przestrzeni,
+      więcej możliwości, nowa energia.</p>
+
+    <div class="acts rise">
+      <a class="btn" href="tel:+48884304054">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        884 304 054
+      </a>
+      <a class="btn" href="#grafik">Zobacz grafik</a>
+      <!-- Karnet: sprzedaż przez aplikację eFitness — otwiera popup z instrukcją -->
+      <a class="btn solid" href="#jak-to-dziala" id="karnet">Kup karnet</a>
+    </div>
+
+    <div class="today" id="today">
+      <div class="today-h">
+        <span class="lab">Dziś na macie <i id="todayTag" class="tag"></i></span>
+        <span class="d" id="todayDate"></span>
+      </div>
+      <div class="today-list" id="todayList"></div>
+    </div>
+  </div>
+</div>
+
+<section class="gal">
+  <div class="wrap">
+    <!-- Zdjęcia finalne z brand/Foto_finalne (obróbka wg brandbooka — nie nakładać filtrów) -->
+    <div class="strip">
+      <figure><img src="assets/img/klub-01.jpg" width="1080" height="720" decoding="async"
+        alt="Sala treningowa Strix Fight Club po przebudowie — worki, mata, blisko 200 m²"></figure>
+      <figure><img src="assets/img/klub-02.jpg" width="1080" height="720" decoding="async"
+        alt="Trening bokserski grupy młodzieżowej na macie"></figure>
+      <figure><img src="assets/img/klub-03.jpg" width="1080" height="720" decoding="async"
+        alt="Grupa dorosłych ćwiczy uderzenia w szeregu"></figure>
+    </div>
+    <figcaption>Przebudowany klub · Pruszków, Komorowska 28</figcaption>
+  </div>
+</section>
+
+<section id="grafik">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Grafik od września <i id="gridTag" class="tag tag-b"></i></h2>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>Co się zmieniło</h2>
+      <p>Od września trenujemy w przebudowanym klubie.</p>
+    </div>
+    <div class="news">
+      <div class="card"><div class="k">200 m²</div><h4>Nowa przestrzeń</h4>
+        <p>Blisko dwieście metrów powierzchni treningowej. Więcej miejsca na macie, mniej czekania na worek.</p></div>
+      <div class="card"><div class="k">Szatnie</div><h4>Prysznice i przebieralnie</h4>
+        <p>Nowa strefa szatni z prysznicami. Można przyjść prosto z pracy i wyjść gotowym na resztę dnia.</p></div>
+      <div class="card"><div class="k">Parking</div><h4>Miejsca dla klubowiczów</h4>
+        <p>Własny parking przy klubie. Nowe wejście od ul. Komorowskiej.</p></div>
+      <div class="card"><div class="k">Gratis</div><h4>Strix Intro w niedzielę</h4>
+        <p>Bezpłatny trening wprowadzający dla początkujących. Niedziela, 10:00. Bez zapisów, bez zobowiązań.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="contact" id="kontakt">
+  <div class="wrap">
+    <div>
+      <h2>Wpadnij albo zadzwoń</h2>
+      <a class="big-tel mono" href="tel:+48884304054">884&nbsp;304&nbsp;054</a>
+      <p class="addr">
+        <b>Strix Fight Club</b><br>
+        ul. Komorowska 28, 05-800 Pruszków<br>
+        <span>Nowe wejście od ul. Komorowskiej</span>
+      </p>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Strix+Fight+Club,+Komorowska+28,+05-800+Pruszk%C3%B3w" target="_blank" rel="noopener">
+        Otwórz w Google Maps →</a>
+    </div>
+
+    <div class="mapbox">
+      <div class="fallback">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21.5s7-6.2 7-11.3A7 7 0 0 0 5 10.2c0 5.1 7 11.3 7 11.3z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <b>Komorowska 28, Pruszków</b>
+        <span>Wejście od ul. Komorowskiej · parking dla klubowiczów</span>
+      </div>
+      <iframe title="Mapa dojazdu do Strix Fight Club" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Strix+Fight+Club,+Komorowska+28,+05-800+Pruszk%C3%B3w&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+    </div>
+    <div class="social">
+      <a class="slink" href="https://www.facebook.com/strixfightclub" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+        <span class="txt"><b>Facebook</b><small>facebook.com/strixfightclub</small></span>
+      </a>
+      <a class="slink" href="https://www.instagram.com/strixfightclub" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5.4"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
+        <span class="txt"><b>Instagram</b><small>instagram.com/strixfightclub</small></span>
+      </a>
+      <a class="slink" href="mailto:klub@strixfc.pl">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="4.5" width="19" height="15" rx="2.4"/><path d="m3 6 9 6.5L21 6"/></svg>
+        <span class="txt"><b>Napisz</b><small>klub@strixfc.pl</small></span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="yr"></span> Strix Fight Club · Fundacja Strix</span>
+    <span>Nowy serwis w budowie</span>
+  </div>
+</footer>
+
+<div class="modal" id="karnetModal" role="dialog" aria-modal="true" aria-labelledby="karnetTitle" hidden>
+  <div class="modal-box">
+    <button class="modal-x" type="button" aria-label="Zamknij okno">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <p class="lab">Krok po kroku</p>
+    <h3 class="modal-title" id="karnetTitle">Jak to działa</h3>
+
+    <ol class="steps">
+      <li>Pobierz aplikację eFitness</li>
+      <li>Znajdź klub STRIX Fight Club</li>
+      <li>Załóż konto i wybierz karnet</li>
+      <li>Zapłać kartą lub BLIK-iem</li>
+      <li>Skanuj QR u trenera</li>
+    </ol>
+
+    <p class="modal-note">Zeskanuj kod aparatem w telefonie albo kliknij wybrany sklep.</p>
+    <div class="stores">
+      <a class="store" href="https://apps.apple.com/pl/app/efitnessapp/id1054978020" target="_blank" rel="noopener">
+        <img src="assets/img/qr-efitness-ios.png" width="518" height="518" decoding="async"
+          alt="Kod QR — pobierz eFitness App z App Store">
+        <span class="store-t">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+          <span><b>App Store</b><small>iPhone / iPad</small></span>
+        </span>
+      </a>
+      <a class="store" href="https://play.google.com/store/apps/details?id=pl.efitness.mobile" target="_blank" rel="noopener">
+        <img src="assets/img/qr-efitness-android.png" width="574" height="574" decoding="async"
+          alt="Kod QR — pobierz eFitness App z Google Play">
+        <span class="store-t">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
+          <span><b>Google Play</b><small>Android</small></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<nav class="callbar" aria-label="Szybki kontakt">
+  <a class="solid" href="tel:+48884304054">Zadzwoń</a>
+  <a href="https://www.instagram.com/strixfightclub" target="_blank" rel="noopener">Instagram</a>
+  <a href="https://www.facebook.com/strixfightclub" target="_blank" rel="noopener">Facebook</a>
+</nav>
+
+<script src="assets/js/app.js" defer></script>
+
 </body>
 </html>
