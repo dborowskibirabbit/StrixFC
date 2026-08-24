@@ -1,0 +1,43 @@
+name: Deploy to OVH
+
+# Wgrywa stronę na hosting OVH po każdym pushu do main.
+# Wymagane sekrety w repo (Settings → Secrets and variables → Actions):
+#   FTP_SERVER   — np. ftp.strixfc.pl albo ftp.cluster0XX.hosting.ovh.net
+#   FTP_USERNAME — login FTP z panelu OVH
+#   FTP_PASSWORD — hasło FTP
+#   FTP_DIR      — katalog docelowy na serwerze, np. /www/ (z ukośnikami)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # pozwala odpalić deploy ręcznie z zakładki Actions
+
+concurrency:
+  group: deploy-ovh
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobierz repo
+        uses: actions/checkout@v4
+
+      - name: Deploy na OVH (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          server-dir: ${{ secrets.FTP_DIR }}
+          # Wgrywamy tylko pliki strony — bez repo, backupu i narzędzi
+          exclude: |
+            .git*
+            .github/**
+            .venv/**
+            backup/**
+            node_modules/**
+            **/.DS_Store
+          log-level: standard
