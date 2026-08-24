@@ -84,6 +84,14 @@ h1 em{font-style:normal;color:var(--terra);display:block}
 .btn.solid{background:var(--terra);border-color:var(--terra);color:#17150F}
 .btn.solid:hover{background:#CB9970;border-color:#CB9970}
 
+/* kompaktowe przyciski hero na telefonach — desktop bez zmian */
+@media(max-width:560px){
+  .acts{gap:8px;margin-top:26px;flex-wrap:nowrap}
+  .btn{flex:1;justify-content:center;gap:7px;
+    padding:11px 10px;font-size:.813rem;letter-spacing:0;white-space:nowrap}
+  .btn svg{width:14px;height:14px}
+}
+
 /* ── dziś na macie ───────────────────────────── */
 .today{
   margin-top:clamp(40px,6vw,60px);
