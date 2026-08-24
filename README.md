@@ -6,33 +6,49 @@ Bez frameworków, bez build stepu — wrzucasz katalog na serwer i działa.
 ## Struktura
 
 ```
-strixfc-www/
-├── index.html                 struktura strony
-├── .nojekyll                  wyłącza Jekylla na GitHub Pages
+StrixFC/                     katalog główny repo = katalog domeny
+├── index.html               struktura strony
+├── .nojekyll                wyłącza Jekylla na GitHub Pages
+├── backup/                  poprzednia wersja serwisu (archiwum, niewgrywana na serwer)
 └── assets/
-    ├── css/style.css          cała warstwa wizualna
-    ├── js/app.js              grafik + panel „dziś na macie"
-    ├── fonts/                 Anton i Manrope, subsety latin + latin-ext
+    ├── css/style.css        cała warstwa wizualna
+    ├── js/app.js            grafik + panel „dziś na macie" + popup „Kup karnet"
+    ├── fonts/               Anton i Manrope, subsety latin + latin-ext
     │   ├── anton-latin.woff2
     │   ├── anton-latin-ext.woff2
     │   ├── manrope-latin.woff2
     │   └── manrope-latin-ext.woff2
     └── img/
-        ├── logo-strix.png     logotyp w nagłówku
-        ├── x-mark.png         sygnet X w tle hero
-        ├── klub-01…03.jpg     galeria, poziomy pasek 3:2 (1080×720)
-        ├── og-image.jpg       miniatura przy udostępnianiu (1200×630)
+        ├── logo-strix.png   logotyp w nagłówku
+        ├── x-mark.png       sygnet X w tle hero
+        ├── klub-01…03.jpg   galeria, poziomy pasek 3:2 (1080×720)
+        ├── qr-efitness-ios.png      QR → App Store (popup „Kup karnet")
+        ├── qr-efitness-android.png  QR → Google Play (popup „Kup karnet")
+        ├── og-image.jpg     miniatura przy udostępnianiu (1200×630)
         ├── favicon-32.png
         └── apple-touch-icon.png
 ```
 
 ## Wgranie
 
-**Zwykły hosting** — skopiuj zawartość `strixfc-www/` do katalogu domeny (`public_html`,
-`www` albo `htdocs`). Nic więcej.
+**OVH (produkcja)** — deploy robi GitHub Actions: `.github/workflows/deploy-ovh.yml`.
+Każdy push do `main` wgrywa stronę przez FTPS (bez `backup/`, `.git`, `.venv`).
+Wymagane sekrety repo (Settings → Secrets and variables → Actions):
 
-**GitHub Pages** — wrzuć zawartość do repozytorium, Settings → Pages → Deploy from a branch,
-katalog `/ (root)`. Plik `.nojekyll` jest po to, żeby Pages nie przetwarzał katalogu `assets`.
+| Sekret | Co wpisać |
+|---|---|
+| `FTP_SERVER` | host FTP z panelu OVH, np. `ftp.strixfc.pl` |
+| `FTP_USERNAME` | login FTP |
+| `FTP_PASSWORD` | hasło FTP |
+| `FTP_DIR` | katalog domeny, np. `/www/` (z ukośnikami) |
+
+Ręczny deploy: zakładka Actions → „Deploy to OVH" → Run workflow.
+
+**Zwykły hosting (ręcznie)** — skopiuj `index.html`, `.nojekyll` i `assets/` do katalogu domeny
+(`public_html`, `www` albo `htdocs`). Nic więcej.
+
+**GitHub Pages** — Settings → Pages → Deploy from a branch, katalog `/ (root)`.
+Plik `.nojekyll` jest po to, żeby Pages nie przetwarzał katalogu `assets`.
 
 ## Co gdzie zmieniać
 
@@ -67,7 +83,10 @@ inaczej atrybut `height` z HTML nadpisuje proporcje.
 Zdjęcia są już obrobione wg brandbooka. **Nie nakładać filtrów CSS** (`saturate`, `contrast`) —
 usunięte z `.gal img` właśnie z tego powodu.
 
-**Link do karnetów** → `index.html`, szukaj `id="karnet"`. Teraz `href="#"`.
+**Kup karnet** → popup „Jak to działa" w `index.html` (szukaj `id="karnetModal"`),
+style w `style.css` (sekcja „modal”), logika otwierania na końcu `assets/js/app.js`.
+Kroki prowadzą przez aplikację eFitness; QR kody i linki wskazują oficjalne sklepy
+(App Store `efitnessapp/id1054978020`, Google Play `pl.efitness.mobile`).
 
 **Teksty i kontakt** → `index.html`. Telefon występuje w trzech miejscach
 (przycisk hero, sekcja kontakt, pasek mobilny) — podmieniając, zmień wszystkie.
